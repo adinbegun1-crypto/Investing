@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InvestAdvice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">InvestAdvice</p>
+        <h1>Simple investing guidance tailored to you.</h1>
+        <p class="hero-copy">
+          Log in, answer a few questions, and choose whether you want to analyze your
+          portfolio or get a starter plan.
+        </p>
+      </header>
+
+      <main>
+        <section class="panel active" id="login-screen" aria-labelledby="login-title">
+          <div class="panel-header">
+            <h2 id="login-title">Log in</h2>
+            <p>Use your email and password to continue.</p>
+          </div>
+          <form id="login-form" class="form-grid">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                minlength="8"
+                required
+              />
+            </label>
+            <button type="submit" class="primary-btn">Continue</button>
+          </form>
+        </section>
+
+        <section class="panel" id="questionnaire-screen" aria-labelledby="questionnaire-title">
+          <div class="panel-header">
+            <h2 id="questionnaire-title">Investor questionnaire</h2>
+            <p>Tell us a little about yourself so we can personalize the next step.</p>
+          </div>
+          <form id="questionnaire-form" class="form-grid questionnaire-grid">
+            <label>
+              Age
+              <input type="number" name="age" min="18" max="120" placeholder="35" required />
+            </label>
+            <label>
+              Country
+              <input type="text" name="country" placeholder="United States" required />
+            </label>
+            <label>
+              Investment experience
+              <select name="experience" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="beginner">Beginner</option>
+                <option value="some experience">Some experience</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </label>
+            <label>
+              Risk tolerance
+              <select name="riskTolerance" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+            <label>
+              Time horizon
+              <select name="timeHorizon" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="less than 3 years">Less than 3 years</option>
+                <option value="3-7 years">3-7 years</option>
+                <option value="7+ years">7+ years</option>
+              </select>
+            </label>
+            <label>
+              Main goal
+              <select name="mainGoal" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="grow your wealth long term">Grow your wealth long term</option>
+                <option value="retirement">Retirement</option>
+                <option value="save for big purchase">Save for big purchase</option>
+              </select>
+            </label>
+            <label>
+              Monthly amount you can invest
+              <input
+                type="number"
+                name="monthlyAmount"
+                min="0"
+                step="50"
+                placeholder="500"
+                required
+              />
+            </label>
+            <label>
+              Current cash available to invest
+              <input
+                type="number"
+                name="currentCash"
+                min="0"
+                step="100"
+                placeholder="10000"
+                required
+              />
+            </label>
+            <label class="full-width">
+              What worries you most about investing?
+              <select name="worry" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="losing money">Losing money</option>
+                <option value="buying the wrong stock">Buying the wrong stock</option>
+                <option value="being too concentrated">Being too concentrated</option>
+                <option value="missing out on the next big win">Missing out on the next big win</option>
+              </select>
+            </label>
+            <button type="submit" class="primary-btn full-width">See your options</button>
+          </form>
+        </section>
+
+        <section class="panel" id="choice-screen" aria-labelledby="choice-title">
+          <div class="panel-header">
+            <h2 id="choice-title">Choose your next step</h2>
+            <p>Pick the experience that fits what you want to do today.</p>
+          </div>
+          <div class="option-grid">
+            <article class="choice-card">
+              <h3>Analyze portfolio</h3>
+              <p>
+                Paste your holdings and get a structured portfolio intelligence review with themes, charts, and action steps.
+              </p>
+              <button type="button" class="secondary-btn" data-target="analysis-screen">
+                Analyze portfolio
+              </button>
+            </article>
+            <article class="choice-card">
+              <h3>Get starter plan</h3>
+              <p>
+                See a short written summary based on the answers you gave in the
+                questionnaire.
+              </p>
+              <button type="button" class="secondary-btn" data-target="starter-screen">
+                Get starter plan
+              </button>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel" id="analysis-screen" aria-labelledby="analysis-title">
+          <div class="panel-header">
+            <h2 id="analysis-title">Analyze portfolio</h2>
+            <p>Enter one holding per line in the format <strong>AAPL — 5000</strong> to get a portfolio intelligence review with archetypes, warnings, charts, and fixes. For cash, just write format of <strong>CASH — 5000</strong>.</p>
+          </div>
+          <form id="analysis-form" class="form-grid">
+            <label class="full-width">
+              Your holdings
+              <textarea
+                name="holdings"
+                rows="8"
+                placeholder="AAPL - 5000&#10;VOO - 8000&#10;BND - 2000"
+                required
+              ></textarea>
+            </label>
+            <div class="analysis-preview full-width">
+              <strong>What shows up after you analyze</strong>
+              <ul>
+                <li>A standard 5-part response: diagnosis, main issue, secondary issues, positives, and next steps</li>
+                <li>Primary archetype, optional secondary archetype, and deterministic action priorities</li>
+                <li>Specific action steps to fix the portfolio issues</li>
+                <li>Sector and geography charts plus a portfolio health score</li>
+              </ul>
+            </div>
+            <button type="submit" class="primary-btn">Analyze holdings</button>
+            <button type="button" class="ghost-btn" data-target="choice-screen">Back</button>
+          </form>
+          <div id="analysis-output" class="result-card hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" id="starter-screen" aria-labelledby="starter-title">
+          <div class="panel-header">
+            <h2 id="starter-title">Your starter plan summary</h2>
+            <p>A short personalized summary based on your questionnaire answers.</p>
+          </div>
+          <div id="starter-output" class="result-card"></div>
+          <button type="button" class="ghost-btn" data-target="choice-screen">Back</button>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
