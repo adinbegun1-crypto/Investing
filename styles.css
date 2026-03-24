@@ -130,6 +130,10 @@ label,
   backdrop-filter: blur(12px);
 }
 
+#choice-screen {
+  position: relative;
+}
+
 .panel.active {
   display: block;
 }
@@ -233,6 +237,11 @@ button:hover {
   color: var(--text);
 }
 
+.secondary-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #f4f9ff;
+}
+
 .ghost-btn {
   background: transparent;
   color: var(--text);
@@ -241,6 +250,27 @@ button:hover {
 
 .full-width {
   grid-column: 1 / -1;
+}
+
+.auth-mode-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.corner-icon-btn {
+  position: absolute;
+  top: 1.45rem;
+  right: 1.45rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #e7f1fb;
+  color: var(--text);
+  border: 1px solid rgba(33, 95, 158, 0.32);
+  padding: 0;
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .option-grid,
