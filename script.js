@@ -7,8 +7,8 @@ const analysisOutput = document.getElementById('analysis-output');
 const profileOutput = document.getElementById('profile-output');
 const profileStatus = document.getElementById('profile-status');
 
-const SUPABASE_URL = window.SUPABASE_URL || 'https://YOUR_PROJECT.supabase.co';
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = window.SUPABASE_URL || 'https://aormwwpaulpcvkezcamh.supabase.co';
+const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || 'sb_publishable_I2XKUAvXUVT12E7rYnEOtw_2g9zdKzh';
 const supabaseClient = window.supabase?.createClient &&
   !SUPABASE_URL.includes('YOUR_PROJECT') &&
   !SUPABASE_ANON_KEY.includes('YOUR_SUPABASE')
