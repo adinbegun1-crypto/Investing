@@ -457,7 +457,7 @@ function setAuthModeUI(mode) {
   }
   const newsletterCheckbox = newsletterOptInField.querySelector('input[name="newsletterOptIn"]');
   const shouldShowNewsletter = mode === 'create';
-  newsletterOptInField.classList.toggle('hidden', !shouldShowNewsletter);
+  loginForm.classList.toggle('create-mode', shouldShowNewsletter);
   if (newsletterCheckbox) {
     newsletterCheckbox.disabled = !shouldShowNewsletter;
     if (!shouldShowNewsletter) {
